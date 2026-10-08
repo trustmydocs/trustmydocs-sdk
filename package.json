@@ -1,0 +1,71 @@
+{
+  "name": "trustmydocs",
+  "version": "0.1.0",
+  "description": "Verify French official documents (2D-Doc codes, tax notices, ID cards, passports, payslips, tenant files) from Node.js, the command line or any MCP client.",
+  "keywords": [
+    "2d-doc",
+    "2ddoc",
+    "datamatrix",
+    "avis-d-imposition",
+    "tax-notice",
+    "document-verification",
+    "kyc",
+    "france",
+    "dgfip",
+    "ants",
+    "mcp",
+    "model-context-protocol",
+    "cli",
+    "sdk"
+  ],
+  "homepage": "https://trustmydocs.com",
+  "bugs": "https://github.com/GITHUB_OWNER/trustmydocs-sdk/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GITHUB_OWNER/trustmydocs-sdk.git"
+  },
+  "license": "Apache-2.0",
+  "author": "Trust My Docs <contact@trustmydocs.com>",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "trustmydocs": "dist/cli.js",
+    "trustmydocs-mcp": "dist/mcp.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "prepare": "git config core.hooksPath .githooks 2>/dev/null || true",
+    "build": "rm -rf dist && tsc -p tsconfig.json && chmod +x dist/cli.js dist/mcp.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "check:hygiene": "scripts/check-hygiene.sh",
+    "prepublishOnly": "npm run check:hygiene && npm test"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.0",
+    "typescript": "^5.5.3"
+  }
+}
