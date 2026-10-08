@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# Commit message policy for this repository (bash 3.2 compatible).
+#
+#   1. exactly one line: no body, no trailers, no blank-line continuation;
+#   2. 72 characters at most;
+#   3. no tooling attribution: the history reads as written by the maintainers.
+#
+# Enabled per clone with: git config core.hooksPath .githooks
+# (npm install does this through the "prepare" script).
+set -uo pipefail
+
+MESSAGE_FILE="$1"
+# Drop comment lines and trailing blank lines, keep what git will record.
+LINES=$(grep -v '^#' "$MESSAGE_FILE" | sed -e :a -e '/^\n*$/{$d;N;ba' -e '}')
+COUNT=$(printf '%s\n' "$LINES" | grep -c . || true)
+
+if [ "$COUNT" -eq 0 ]; then
+  echo "commit-msg: empty message." >&2
+  exit 1
+fi
+if [ "$COUNT" -gt 1 ]; then
+  echo "commit-msg: one line only (no body, no trailers). Got $COUNT lines." >&2
+  exit 1
+fi
+
+SUBJECT=$(printf '%s' "$LINES" | head -n 1)
+if [ "${#SUBJECT}" -gt 72 ]; then
+  echo "commit-msg: subject is ${#SUBJECT} characters; keep it under 72." >&2
+  exit 1
+fi
+
+# Case-insensitive; also catches the emoji and the usual trailer names.
+if printf '%s' "$SUBJECT" | grep -qiE 'claude|anthropic|co-authored-by|generated with|signed-off-by|🤖'; then
+  echo "commit-msg: tooling attribution is not allowed in commit messages." >&2
+  exit 1
+fi
+
+exit 0
