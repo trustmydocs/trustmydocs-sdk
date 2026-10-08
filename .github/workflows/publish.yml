@@ -1,0 +1,51 @@
+# Publishes to npm when a GitHub release is published.
+#
+# Authentication is npm trusted publishing (OIDC): the npm package settings
+# name this repository and this workflow file as the trusted publisher, and
+# no token exists anywhere. Provenance attestations are generated, so users
+# can run `npm audit signatures`. See docs/publishing.md.
+name: Publish
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "npm publish --dry-run only"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+      - run: npm --version
+      - run: npm ci
+      - run: npm test
+      - run: scripts/check-hygiene.sh
+      - name: Tag must match package.json version
+        if: github.event_name == 'release'
+        run: |
+          TAG="${GITHUB_REF_NAME#v}"
+          VERSION=$(node -p "require('./package.json').version")
+          test "$TAG" = "$VERSION" || { echo "tag v$TAG != package.json $VERSION" >&2; exit 1; }
+      - name: Publish (dry run)
+        if: github.event_name == 'workflow_dispatch' && inputs.dry_run
+        run: npm publish --dry-run --access public
+      - name: Publish
+        if: github.event_name == 'release' || (github.event_name == 'workflow_dispatch' && !inputs.dry_run)
+        run: npm publish --access public --provenance
