@@ -1,0 +1,6 @@
+{
+  "name": "trustmydocs-examples-node",
+  "private": true,
+  "type": "module",
+  "dependencies": { "trustmydocs": "^0.1.0" }
+}

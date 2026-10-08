@@ -1,0 +1,5 @@
+{
+  "success": true,
+  "2d_doc_results": { "success": false, "error": "Aucun code 2D-Doc lisible n'a été trouvé sur ce document." },
+  "llm_results": { "success": true, "extracted_fields": { "nom": "<NOM>", "revenu_fiscal_de_reference": "<amount>", "annee_revenus": "2025" } }
+}

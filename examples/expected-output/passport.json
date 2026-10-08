@@ -1,0 +1,4 @@
+{
+  "success": true,
+  "passport_fields": { "surname": "<SURNAME>", "given_names": "<GIVEN NAMES>", "nationality": "FRA", "date_of_birth": "<date>", "passport_number": "<number>", "date_of_expiry": "<date>", "mrz": "<two MRZ lines>" }
+}

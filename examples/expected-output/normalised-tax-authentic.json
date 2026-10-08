@@ -1,0 +1,59 @@
+{
+  "type": "tax",
+  "verdict": "authentic",
+  "signature": "valid",
+  "content": "match",
+  "latest": "yes",
+  "analysis": "code_and_ocr",
+  "authenticityDetail": "signed_and_matching",
+  "checks": [
+    {
+      "key": "analysis",
+      "status": "done",
+      "outcome": "code_and_ocr"
+    },
+    {
+      "key": "signature",
+      "status": "ok",
+      "outcome": "valid"
+    },
+    {
+      "key": "content",
+      "status": "ok",
+      "outcome": "match"
+    },
+    {
+      "key": "latest",
+      "status": "ok",
+      "outcome": "yes"
+    },
+    {
+      "key": "authenticity",
+      "status": "ok",
+      "outcome": "authentic"
+    }
+  ],
+  "signedFields": {
+    "nomEtPrenomDuDeclarant1": "<NOM PRENOM>",
+    "numeroFiscalDuDeclarant1": "<13 digits>",
+    "referenceDAvisDImpot": "<reference>",
+    "revenuFiscalDeReference": "<amount>",
+    "anneeDesRevenus": "2025",
+    "nombreDeParts": "<parts>",
+    "dateDeMiseEnRecouvrement": "<date>"
+  },
+  "extractedFields": {
+    "nom": "<NOM>",
+    "prenom": "<PRENOM>",
+    "numero_fiscal": "<13 digits>",
+    "reference_avis": "<reference>",
+    "revenu_fiscal_de_reference": "<amount>",
+    "annee_revenus": "2025",
+    "adresse": "<address>",
+    "nombre_de_parts": "<parts>",
+    "impot_net": "<amount>",
+    "situation_familiale": "<status>",
+    "date_etablissement": "<date>",
+    "montant_restant_a_payer": "<amount>"
+  }
+}

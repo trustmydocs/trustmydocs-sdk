@@ -1,0 +1,10 @@
+{
+  "success": true,
+  "2d_doc_results": {
+    "success": true,
+    "certificate": { "verification": "ERROR", "error": "Certificate not found" },
+    "fiscal_fields": { "nomEtPrenomDuDeclarant1": "<NOM PRENOM>", "revenuFiscalDeReference": "<amount>", "anneeDesRevenus": "2025" }
+  },
+  "llm_results": { "success": true, "extracted_fields": { "nom": "<NOM>", "revenu_fiscal_de_reference": "<amount>" } },
+  "authenticity": true
+}

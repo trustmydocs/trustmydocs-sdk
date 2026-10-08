@@ -1,0 +1,7 @@
+{
+  "name": "trustmydocs-examples-typescript",
+  "private": true,
+  "type": "module",
+  "dependencies": { "trustmydocs": "^0.1.0" },
+  "devDependencies": { "tsx": "^4.19.0", "typescript": "^5.5.3" }
+}

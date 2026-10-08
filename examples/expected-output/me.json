@@ -1,0 +1,10 @@
+{
+  "email": "c***t@example.org",
+  "plan": "free",
+  "quota_per_day": 100,
+  "used_today": 4,
+  "service_quota_per_day": 300,
+  "service_used_today": 27,
+  "usage_total": 61,
+  "created_at": "2026-09-01T09:12:44+00:00"
+}

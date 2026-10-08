@@ -1,0 +1,9 @@
+{
+  "401": { "error": "invalid_key", "message": "Missing or malformed API key. Request one on https://trustmydocs.com/fr/api" },
+  "401_revoked": { "error": "invalid_key", "message": "Unknown or revoked API key." },
+  "429_key": { "headers": { "Retry-After": "41213" }, "body": { "error": "quota_reached", "message": "Daily quota of 100 verifications reached." } },
+  "429_service": { "headers": { "Retry-After": "41213" }, "body": { "error": "service_quota_reached", "message": "L'API gratuite a atteint son plafond de 300 vérifications pour aujourd'hui. Revenez demain, ou vérifiez le document sur https://trustmydocs.com/fr. / The free API reached its daily ceiling of 300 verifications; try again tomorrow." } },
+  "413": { "body": "Request Entity Too Large" },
+  "503": { "error": "unavailable" },
+  "200_unreadable": { "success": false, "error": "Unsupported file format. Supported formats: .pdf, .jpg, .jpeg, .png, .tiff, .tif, .bmp" }
+}

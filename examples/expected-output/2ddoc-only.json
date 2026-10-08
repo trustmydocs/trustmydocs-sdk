@@ -1,0 +1,13 @@
+{
+  "success": true,
+  "certificate": { "verification": "OK" },
+  "fiscal_fields": {
+    "nomEtPrenomDuDeclarant1": "<NOM PRENOM>",
+    "numeroFiscalDuDeclarant1": "<13 digits>",
+    "referenceDAvisDImpot": "<reference>",
+    "revenuFiscalDeReference": "<amount>",
+    "anneeDesRevenus": "2025",
+    "nombreDeParts": "<parts>"
+  },
+  "Dernier avis ?": true
+}

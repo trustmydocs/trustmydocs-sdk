@@ -1,0 +1,19 @@
+{
+  "success": true,
+  "version": "1.0",
+  "scope": "salaried",
+  "documents": [
+    { "name": "avis-2025.pdf", "kind": "tax", "kind_label": "Avis d'imposition", "verdict": "authentic", "verdict_label": "Authentique", "notes": ["Dernier avis connu de la DGFiP."], "extracted": { "revenu_fiscal_de_reference": "<amount>", "annee": "2025", "nom": "<NOM>" } },
+    { "name": "paie-07.pdf", "kind": "payslip", "kind_label": "Bulletin de paie", "verdict": "unverifiable", "verdict_label": "Non vérifiable", "notes": ["Lecture optique seule."], "extracted": { "net_a_payer": "<amount>", "periode": "<month>", "nom": "<NOM>" } },
+    { "name": "paie-08.pdf", "kind": "payslip", "kind_label": "Bulletin de paie", "verdict": "unverifiable", "verdict_label": "Non vérifiable", "notes": [], "extracted": { "net_a_payer": "<amount>", "periode": "<month>" } },
+    { "name": "cni-recto.jpg", "kind": "id", "kind_label": "Carte d'identité", "verdict": "authentic", "verdict_label": "Authentique", "notes": [], "extracted": { "nom": "<NOM>", "prenoms": "<PRENOMS>" } }
+  ],
+  "checks": [
+    { "id": "identity", "label": "Même identité sur tous les documents", "status": "coherent", "detail": "Nom et prénom concordants." },
+    { "id": "income", "label": "Salaires annualisés vs revenu fiscal signé", "status": "coherent", "detail": "Écart de 6 % (tolérance 25 %).", "gap_percent": 6 }
+  ],
+  "rental_capacity": { "label": "<amount> € / mois", "monthly_net_mean": "<amount>", "rule": "mean net / 3" },
+  "reserves": [],
+  "quota": { "per_day": 100, "used_today": 4, "service_per_day": 300, "service_used_today": 27 },
+  "disclaimer": "Aide à la décision, pas une preuve : seule la vérification de signature 2D-Doc est cryptographique. Aucun document n'est conservé."
+}
