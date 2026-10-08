@@ -5,7 +5,7 @@ Thank you for helping. This repository holds the open-source client of the Trust
 ## Setup
 
 ```sh
-git clone https://github.com/GITHUB_OWNER/trustmydocs-sdk.git
+git clone https://github.com/trustmydocs/trustmydocs-sdk.git
 cd trustmydocs-sdk
 npm install          # also enables the repository git hooks
 npm test             # builds, then runs the unit tests (no network)

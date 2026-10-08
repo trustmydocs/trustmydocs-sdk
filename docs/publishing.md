@@ -5,7 +5,7 @@ The package is published from GitHub Actions only, with **npm trusted publishing
 ## One-time setup
 
 1. On npmjs.com, create the package the first time by hand from a maintainer machine, or publish `0.1.0` once with `npm publish --access public` after `npm login` as the package owner. Trusted publishers can only be configured on an existing package.
-2. Package settings on npmjs.com, section *Trusted Publisher*: provider **GitHub Actions**, repository owner `GITHUB_OWNER`, repository `trustmydocs-sdk`, workflow filename `publish.yml`, no environment.
+2. Package settings on npmjs.com, section *Trusted Publisher*: provider **GitHub Actions**, repository owner `trustmydocs`, repository `trustmydocs-sdk`, workflow filename `publish.yml`, no environment.
 3. Package settings: require two-factor authentication for publishing by people, and disallow tokens. Trusted publishing is unaffected.
 4. In the GitHub repository: *Settings, Actions, General*, workflow permissions read-only (the workflow requests `id-token: write` itself). Protect `main` (pull requests only, CI required).
 

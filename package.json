@@ -19,10 +19,10 @@
     "sdk"
   ],
   "homepage": "https://trustmydocs.com",
-  "bugs": "https://github.com/GITHUB_OWNER/trustmydocs-sdk/issues",
+  "bugs": "https://github.com/trustmydocs/trustmydocs-sdk/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GITHUB_OWNER/trustmydocs-sdk.git"
+    "url": "git+https://github.com/trustmydocs/trustmydocs-sdk.git"
   },
   "license": "Apache-2.0",
   "author": "Trust My Docs <contact@trustmydocs.com>",
