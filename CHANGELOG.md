@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1
+
+- README en français, orienté recherche, avec liens vers le site.
+- `mcpName` et `server.json` pour la publication dans le MCP Registry (`io.github.trustmydocs/trustmydocs`), avec le connecteur distant `https://trustmydocs.com/mcp`.
+- Description et mots-clés npm en français.
+
 ## 0.1.0
 
 First public release.

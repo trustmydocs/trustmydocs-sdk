@@ -1,0 +1,49 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.trustmydocs/trustmydocs",
+  "title": "Trust My Docs",
+  "description": "Vérification de documents officiels français : 2D-Doc, avis d'imposition, CNI, dossier locataire.",
+  "websiteUrl": "https://trustmydocs.com",
+  "repository": {
+    "url": "https://github.com/trustmydocs/trustmydocs-sdk",
+    "source": "github"
+  },
+  "version": "0.1.1",
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "trustmydocs",
+      "version": "0.1.1",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "environmentVariables": [
+        {
+          "name": "TRUSTMYDOCS_API_KEY",
+          "description": "Clé d'API gratuite (tmd_live_...), obtenue par email sur https://trustmydocs.com/fr/api ou avec « npx trustmydocs login ».",
+          "isRequired": true,
+          "isSecret": true
+        },
+        {
+          "name": "TRUSTMYDOCS_LANG",
+          "description": "Langue des résumés : fr ou en.",
+          "default": "fr"
+        }
+      ]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://trustmydocs.com/mcp"
+    }
+  ]
+}

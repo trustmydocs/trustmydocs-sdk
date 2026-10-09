@@ -1,6 +1,7 @@
 {
   "name": "trustmydocs",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "mcpName": "io.github.trustmydocs/trustmydocs",
   "description": "Vérification de documents officiels français (avis d'imposition, 2D-Doc, carte d'identité, bulletin de paie, dossier locataire) depuis Node.js, la ligne de commande ou un client MCP. SDK, CLI et serveur MCP de l'API Trust My Docs.",
   "keywords": [
     "2d-doc",
