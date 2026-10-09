@@ -1,5 +1,11 @@
 # trustmydocs
 
+[![npm](https://img.shields.io/npm/v/trustmydocs.svg)](https://www.npmjs.com/package/trustmydocs)
+[![CI](https://github.com/trustmydocs/trustmydocs-sdk/actions/workflows/ci.yml/badge.svg)](https://github.com/trustmydocs/trustmydocs-sdk/actions/workflows/ci.yml)
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+
+**Website: [trustmydocs.com](https://trustmydocs.com)** · [Verify a document online, free, no account](https://trustmydocs.com/fr) · [API and free key](https://trustmydocs.com/fr/api) · [Swagger](https://trustmydocs.com/api/docs) · [MCP connector for Claude and ChatGPT](https://trustmydocs.com/fr/connecteur-mcp) · [Make and n8n tutorial](https://trustmydocs.com/fr/automatisation-make) · [Rental application check](https://trustmydocs.com/fr/dossier-locataire) · [Blog](https://trustmydocs.com/fr/blog)
+
 Verify French official documents from Node.js, the command line, or any MCP client (Claude, Cursor, ChatGPT and others).
 
 Reads the **2D-Doc** code printed on tax notices (avis d'imposition) and identity cards, checks its **electronic signature against the issuer's certificate authority**, asks the DGFiP whether a tax notice is the **latest one known**, and compares the **printed text with the signed data**. Also reads passports, old-format identity cards and payslips, and analyses a whole **rental application** (dossier locataire) in one call.
@@ -122,11 +128,15 @@ Reaching 429 with `Retry-After` is expected at the ceiling. Disposable or placeh
 - `examples/` runnable scripts in Node, TypeScript, Python, curl, GitHub Actions, with redacted expected outputs
 - `test/` unit tests (`npm test`), no network needed
 
+The service itself, its privacy policy and terms live on [trustmydocs.com](https://trustmydocs.com): [privacy](https://trustmydocs.com/fr/politique-confidentialite), [terms](https://trustmydocs.com/fr/cgu), [legal notice](https://trustmydocs.com/fr/mentions-legales). Questions: contact@trustmydocs.com.
+
 Contributions: see [CONTRIBUTING.md](CONTRIBUTING.md). Security: [SECURITY.md](SECURITY.md). License: Apache-2.0. "Trust My Docs" is a trade name of the service operator; the license grants no right to use it.
 
 ---
 
 ## En français
+
+**Site : [trustmydocs.com](https://trustmydocs.com)** · [Vérifier un document en ligne, gratuit, sans compte](https://trustmydocs.com/fr) · [API et clé gratuite](https://trustmydocs.com/fr/api) · [Connecteur MCP pour Claude et ChatGPT](https://trustmydocs.com/fr/connecteur-mcp) · [Tutoriel Make et n8n](https://trustmydocs.com/fr/automatisation-make) · [Dossier locataire](https://trustmydocs.com/fr/dossier-locataire) · [Blog](https://trustmydocs.com/fr/blog)
 
 Vérifiez des documents officiels français depuis Node.js, la ligne de commande ou un client MCP (Claude, Cursor, ChatGPT...). Le paquet lit le **code 2D-Doc** d'un avis d'imposition ou d'une carte d'identité, **vérifie sa signature électronique** auprès de l'autorité de certification de l'émetteur, demande à la DGFiP s'il s'agit du **dernier avis connu**, et compare le **texte imprimé aux données signées**. Il lit aussi passeports, anciennes CNI et bulletins de paie, et analyse un **dossier locataire** complet en un appel.
 
